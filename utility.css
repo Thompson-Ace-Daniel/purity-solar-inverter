@@ -1,0 +1,161 @@
+/* Pop-up */
+/* Quote Section */
+:root {
+  --color-gold: #FFD700;
+  --color-cyan: #00E0FF;
+  --color-black: #0d0d0d;
+  --color-white: #ffffff;
+  }
+.quote-section {
+  max-width: 100%;
+  background-color: var(--color-gold);
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Button */
+.get-quote-btn {
+  background-color: var(--color-cyan);
+  color: var(--color-black);
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 224, 255, 0.3);
+  transition: transform 0.3s ease;
+}
+@media only screen and (min-width: 1024px){
+   .get-quote-btn {
+      padding: 2rem 3rem;
+      font-size: 2rem;
+   }
+}
+.get-quote-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+.light-mode .modal-overlay {
+   background-color: rgba(255, 255, 255, 0.85);
+}
+/* Hidden */
+.hidden {
+  display: none;
+}
+
+/* Modal Box */
+.modal-box {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  width: 90%;
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.3);
+  position: relative;
+  animation: fadeInScale 0.3s ease-out;
+}
+.light-mode .modal-box {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  }
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-white);
+  transition: color 0.2s;
+}
+.light-mode .close-btn {
+   color: var(--color-black);
+}
+.close-btn:hover {
+  color: var(--color-gold);
+}
+.light-mode .close-btn:hover {
+  color: var(--color-cyan);
+}
+
+/* Form Inputs */
+#quote-form input,
+#quote-form textarea:empty {
+  width: 90%;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border: 1px solid var(--color-white);
+  border-radius: 6px;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+.light-mode #quote-form input,
+.light-mode #quote-form textarea:empty {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border: 1px solid var(--color-black);
+}
+
+#quote-form input:valid,
+#quote-form textarea:valid {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border: 1px solid var(--color-white);
+}
+
+.light-mode #quote-form input:valid,
+.light-mode #quote-form textarea:valid {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border: 1px solid var(--color-black);
+}
+
+
+/* Form Button */
+#quote-form button {
+  margin-top: 1rem;
+  background-color: var(--color-gold);
+  color: var(--color-black);
+  border: none;
+  padding: 0.7rem 1.2rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  box-shadow: 0 4px 10px rgba(255, 204, 0, 0.3);
+}
+#quote-form button:hover {
+  background-color: #e6b800;
+}
+
+/* Animation */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
